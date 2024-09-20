@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #87ceeb;
+    font-family: Arial, sans-serif;
+}
+
+#game {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#character {
+    width: 50px;
+    height: 100px;
+    background-color: #ff5733;
+    position: relative;
+    transition: left 0.1s;
+}
+
+#sword {
+    width: 10px;
+    height: 60px;
+    background-color: #ccc;
+    position: absolute;
+    top: 20px;
+    left: 100%;
+    transform-origin: top left;
+    transform: rotate(0deg);
+    transition: transform 0.2s;
+}
+
+#character.moving-left {
+    animation: moveLeft 0.1s forwards;
+}
+
+#character.moving-right {
+    animation: moveRight 0.1s forwards;
+}
+
+@keyframes moveLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-20px); }
+}
+
+@keyframes moveRight {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(20px); }
+}
